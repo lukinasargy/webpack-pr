@@ -18,7 +18,6 @@ module.exports = {
             title: 'Webpack app'
         }),
       new LiveReloadPlugin({
-            title: 'Webpack app'
         })
     ]
 };
