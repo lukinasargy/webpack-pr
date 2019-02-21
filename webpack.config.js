@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -26,8 +25,6 @@ module.exports = {
             filename:'blog.html',
           chunks:['blog'],
             template: PATHS.source + '/pages/blog/blog.pug',
-        }),
-      new LiveReloadPlugin({
         })
     ],
     module: {
@@ -40,5 +37,8 @@ module.exports = {
           }
         }
       ]
-    }
+    },
+  devServer: {
+    stats: 'errors-only'
+  }
 };
